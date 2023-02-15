@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Formular de angajare</title>
+    <title>
+	<h1>Formular angajare bucatar</h1>
+	</title>
+  <head>
+  
+  <body>
+  <h2>Formular angajare bucatar</h2>
+    <form method="post" action="fiser.php">
+	  <table>
+	    <tr>
+		  <td>Nume</td>
+		  <td><input type="text" name="nume" placeholder="nume"/></td>
+		  
+		</tr>
+		<tr>
+		  <td>Prenume</td>
+		  <td><input type="text" name="prenume" placeholder="prenume"/></td>
+		  
+		</tr>
+		<tr>
+		  <td>Telefon</td>
+		  <td><input type="text" name="tel" placeholder="telefon" pattern="[0-9]{10}" maxlength="10"/></td>
+
+		</tr>
+		<tr>
+		  <td>Email</td>
+		  <td><input type="text" name="email" placeholder="email"/></td>
+		</tr>
+		<tr>
+					<td>Judet</td>
+					<td>
+						<select name="oras">
+							<option value="1">Timis</option>
+							<option value="2">Olt</option>
+							<option value="3">Bihor</option>
+							<option value="4">Ilfov</option>
+							<option value="5">Caras-Severin</option>
+						</select>
+					</td>
+		</tr>	
+		<tr>
+		  <td>
+		    <h4>Tip job:</h4>
+			 <td>
+			  <input type="radio" value="patiser" name="tip_post"/>Patiser
+			  <input type="radio" value="cofetar" name="tip_post"/>Cofetar
+			  <input type="radio" value="bucatar" name="tip_post"/>Bucatar
+		     </td>
+		  </td>
+		  
+		</tr>
+		<tr>
+		  <td>Varsta 18-50 ani</td>
+					<td><input type="number" step="1" min="18" max="50" name="varsta"/></td>
+		</tr>
+		<tr>
+		  <td>Experienta</td>
+					<td><input type="number" step="1" min="5" max="50" name="experienta"/></td>
+		</tr>
+		<tr>
+					<td>Alte informatii</td>
+					<td>
+						<textarea name="comentariu" rows="7" cols="40"></textarea>
+					</td>
+		</tr>
+		<tr>
+					<td>Acept termen si conditii</td>
+					<td><input type="checkbox" value="1" name="t&c"/></td>
+		</tr>	
+		<tr>
+					<input type="hidden" name="zi" value="1"/>
+					<td colspan="2"><input type="submit" value="Aplica" />
+					<input type="reset" value="Reseteaza" />
+					 <img src="logo.png" alt="imagine lipsa" style="width:300px;height:100px"/>
+
+					
+					
+					</td>
+		</tr>
+		
+		
+				
+	  </table>
+	
+	</form>
+  
+  
+  </body>
+
+</html>
