@@ -1,0 +1,245 @@
+<html>
+ <head>
+ <style>
+	
+	div{
+	margin: 0px auto;
+	width:35%;
+	padding:30px;
+	font-size:20px;
+	background-color:#006699;
+	}
+	input[type=text],select
+	{
+	width:100%;
+	padding:12px 20px;
+	margin:8px 0;
+	display:inline-block;
+	border=1px solid #ccc;
+	box-sizing:border-box;
+	font-size:14px;
+	}
+	input[type=submit]
+	{
+	width:100%;
+	background-color:#003399;
+	color:white;
+	padding:14px 20px;
+	margin:8px 0;
+	border:none;
+	border-radius:4px;
+	cursor:pointer;
+	font-size:16px;
+	}
+	
+	input[type=submit]:hover
+	{
+	background-color:#2F4F4F;
+	}
+	h1{
+	color:blue;
+	text-align:center;
+	}
+	div label
+	{
+	color:white;
+	}
+	</style>
+
+    <script type="text/javascript" >
+	{
+	function validare_formular(){
+	
+	/* Pentru gen */
+	var masculin=document.getElementById('tipul1').checked;
+	var feminin=document.getElementById('tipul2').checked;
+	
+	/* */
+	var judet = document.getElementById('judet').value;	
+	var emailv = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+	var email=document.getElementById("email").value;
+
+	 
+	if(document.getElementById('nume').value==""){
+	alert('Va rugam sa introduceti numele');
+	return false;
+	}
+	if(document.getElementById('prenume').value==""){
+	alert('Va rugam sa introduceti prenumele');
+	return false;
+	}
+	if(document.getElementById('tel').value==""){
+	alert('Va rugam sa introduceti numarul de telefon');
+	return false;
+	}
+	
+    if (!email.match(emailv)){
+	alert('Va rugam sa introduceti o adresa de email valida');
+	return false;
+	}
+	
+	if(judet==1){
+	alert('Va rugam sa introduceti judetul');
+	return false;
+	}
+	if(masculin==false && feminin==false)
+	{
+	alert('Va rugam selectati genul');
+	return false;
+	}
+	
+	if(document.getElementById('tema').value==""){
+	alert('Va rugam sa specificati tema parcursa la practica');
+	return false;
+	}
+	if(document.getElementById('nume').value==""){
+	alert('Va rugam sa introduceti numele');
+	return false;
+	}
+	if(document.getElementById('firma').value==""){
+	alert('Va rugam sa introduceti numele firmei');
+	return false;
+	}
+	
+	
+	
+	}
+	
+}
+</script>
+  
+  </head>
+  
+  <body>
+   <title>Practica pentru studenti</title>
+   <link rel="stylesheet" href="stiluri.css"/>
+   <center>
+     <h2>Date pentru verificarea finalizarii practicii<h2>
+	 <center>
+   <form method="post" action="mesaj.php" onsubmit="return validare_formular()">
+  <table>
+   <table>
+	    <tr>
+		  <td class="scris" >Nume</td>
+		  <td><input type="text" name="nume" placeholder="nume" id="nume"/>
+		</tr>
+		<tr>
+		  <td class="scris" >Prenume</td>
+		  <td><input type="text" name="prenume" placeholder="prenume" id="prenume"/>
+		  
+		</tr>
+		<tr>
+		  <td class="scris" >Telefon</td>
+		  <td><input type="text" name="tel" placeholder="telefon" pattern="[0-9]{10}" maxlength="10" id="tel"/></td>
+
+		</tr>
+		<tr>
+		  <td class="scris" >Email</td>
+		  <td><input type="text" name="email" placeholder="email" id="email"/></td>
+		</tr>
+		<tr>
+		 <td class="scris">Judet</td>
+
+	     <td >
+	     <select name="judet" id="judet" class="culoarealbastru">
+		<option value="1"></option>
+		<option value="Arad">Arad</option>
+		<option value="Arges">Arges</option>
+		<option value="Bacau">Bacau</option>
+		<option value="Bihor">Bihor</option>
+		<option value="Bistrita-Nasaud">Bistrita-Nasaud</option>
+		<option value="Botosani">Botosani</option>
+		<option value="Braila">Braila</option>
+		<option value="Brasov">Brasov</option>
+		<option value="Buzau">Buzau</option>
+		<option value="Calarasi">Calarasi</option>
+		<option value="Caras-Severin">Caras-Severin</option>
+		<option value="Cluj">Cluj</option>
+		<option value="Constanta">Constanta</option>
+		<option value="Hunedoara">Hunedoara</option>
+		<option value="Ialomita">Ialomita</option>
+		<option value="Iasi">Iasi</option>
+		<option value="Ilfov">Ilfov</option>
+		<option value="Maramures">Maramures</option>
+		<option value="Mehedinti">Mehedinti</option>
+		<option value="Mures">Mures</option>
+		<option value="Neamt">Neamt</option>
+		<option value="Olt">Olt</option>
+		<option value="Prahova">Prahova</option>
+		<option value="Salaj">Salaj</option>
+		<option value="Satu Mare">Satu Mare</option>
+		<option value="Sibiu">Sibiu</option>
+		<option value="Suceava">Suceava</option>
+		<option value="Teleorman">Teleorman</option>
+		<option value="Timis">Timis</option>
+		<option value="Tulcea">Tulcea</option>
+		<option value="Valcea">Valcea</option>
+		<option value="Vaslui">Vaslui</option>
+		<option value="Vrancea">Vrancea</option>
+	   </select>
+	</td>
+</tr>
+		</tr>	
+		<tr>
+		  <td class="scris" ></br>Gen</td>
+		    
+			 
+		  
+		</tr>
+		<td><input type="radio" value="masculin" name="tipul" id="tipul1" />Masculin<br/>
+	    <input type="radio" value="feminin" name="tipul" id="tipul2"/>Feminin<br/>
+	    </td>
+		<tr>
+	<td class="scris">Facultatea </td>
+	<td>
+	   <select name="facultatea" id="facultatea" class="culoare_2">
+		<option value="1"> Facultatea de psihologie</option>
+		<option value="2"> Facultatea de matematica</option>
+		<option value="3"> Facultatea de automatica si calculatoare</option>
+		<option value="4"> Facultatea de mecanica</option>
+	   </select>
+	</td>
+  </tr>
+		
+	<tr>
+	<td class="scris">An studiu </td>
+	<td>
+	   <select name="anstudiu" id="anstudiu" class="culoare_2">
+		<option value="1"> Anul 1</option>
+		<option value="2"> Anul 2</option>
+		<option value="3"> Anul 3</option>
+		<option value="4"> Anul 4</option>
+	   </select>
+	</td>
+  </tr>
+  	</tr>
+   <tr>
+	<td class="scris">Practica online</td>
+	<td><input type="hidden" value="0" name="practica"/></td>
+	  <td><input type="checkbox" value="1" name="practica"/></td>
+	</td>
+   </tr>
+   
+   <tr>
+	<td class="scris">Tema practica</td>
+	<td>
+	     <textarea name="tema" rows="5" cols="35" class="culoarealbastru" id="tema"></textarea>
+	</td>
+</tr>
+<tr>
+	<td class="scris">Firma practica</td>
+	<td>
+	     <textarea name="firma" rows="5" cols="35" class="culoarealbastru" id="firma"></textarea>
+	</td>
+</tr>
+	<tr>
+					<td colspan="2"><input type="submit" value="Trimite" />
+					<br/>
+					
+					</td>
+				</tr>
+  </table>
+  </form>
+  </body>
+
+</html>
